@@ -1,0 +1,242 @@
+<!-- result.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://whatsanalyze.com/favicon.ico" type="image/x-icon">
+    <title>Pragmatic - The WhatsApp Chat Analyzer</title>
+    <link rel="stylesheet" href="/static/css/result.css">
+</head>
+<body>
+    <header id="header">
+        <hgroup>
+            <h1>
+                <a title="Chatilyzer" href="/"></a>
+                <span class="whatsapp"></span>
+                Pragmatic 
+                <span class="slogan">~Analyze your WhatsApp Chat in Seconds</span>
+            </h1>
+        </hgroup>
+    </header>
+    <div class="container">
+        <h1 id="filename">{{ uploaded_filename }}</h1><br>
+        <div class="date-container">
+            <div>
+                <p id="firstmessage1">First Message Date</p>
+            </div>
+            <div>
+                <h2 id="firstmessage2">{{ first_message_date }}</h2>
+            </div>
+        </div>
+        <div class="date-container">
+            <div>
+                <h2 id="lastmessage2">{{ last_message_date }}</h2>
+            </div>
+            <div>
+                <p id="lastmessage1">Last Message Date</p>
+            </div>
+        </div>
+        <div class="stats-grid">
+            <!-- First row of stat cards -->
+            <div class="first-row">
+                <div class="stat-card1">
+                    <h1 id="heading">Total Users</h1>
+                    <p id="para-firstrow">There are total</p>
+                    <h2 id="firstrow-stats">{{ stats.total_users }}</h2>
+                    <p id="para-firstrow">Users in your group</p>
+                </div>
+        
+                <div class="stat-card2">
+                    <h1 id="heading">Total Messages</h1>
+                    <p id="para-firstrow">You have sent </p>
+                    <h2 id="firstrow-stats">{{ stats.num_messages }}</h2>
+                    <p id="para-firstrow">messages</p>
+                </div>
+            </div>
+            <div class="html2pdf__page-break"></div>
+        <br>
+
+        <h2 id="topic">Content</h2>
+            <!-- Remaining rows of stat cards -->
+            <div class="remaining-rows">
+                <div class="stat-card">
+                    <h1 id="heading">Total Words</h1>
+                    <p id="para-firstrow">There are Total</p>
+                    <h2 id="firstrow-stats">{{ stats.words }}</h2>
+                    <p id="para-firstrow">words typed</p>
+                </div>
+                <div class="stat-card">
+                    <h1 id="heading">Messages per Day</h1>
+                    <p id="para-firstrow">There are daily</p>
+                    <h2 id="firstrow-stats">{{ stats.total_messages_per_day }}</h2>
+                    <p id="para-firstrow">messages typed per/day</p>
+                </div>
+                <div class="stat-card">
+                    <h1 id="heading">Links Shared</h1>
+                    <p id="para-firstrow">There are total</p>
+                    <h2 id="firstrow-stats">{{ stats.num_links }}</h2>
+                    <p id="para-firstrow">links shared till now</p>
+                </div>
+                <div class="stat-card">
+                    <h1 id="heading">Media Shared</h1>
+                    <p id="para-firstrow">There are total</p>
+                    <h2 id="firstrow-stats">{{ stats.num_media_messages }}</h2>
+                    <p id="para-firstrow">media shared till now</p>
+                </div>
+            </div>
+        </div>
+        <div class="html2pdf__page-break"></div>
+        <br>
+        <h2 id="topic">User statistics</h2>
+
+        <!-- Display most talkative user -->
+        <div class="combined-grid">
+            <!-- Most Talkative User -->
+            <div class="user-stats">
+                <p id="heading-user">💬Most Talkative💬</p>
+                <h2 id="firstrow-userstats">{{ most_talkative_user }}</h2>
+                <p id="para-firstrow">total <strong>{{ talkative_percentage }} % </strong> of messages typed from overall messages</p>
+            </div>
+    
+            <!-- Influencer -->
+            <div class="user-stats">
+                <p id="heading-user">📷Influencer📷</p>
+                <h2 id="firstrow-userstats">{{ most_influential_user }}</h2>
+                <p id="para-firstrow">Shared <strong>{{ influential_percentage }} % </strong>of media from overall messages.</p>
+            </div>
+        
+            <!-- Early Bird -->
+            <div class="user-stats">
+                <p id="heading-user">☀️Early Bird☀️</p>
+                <h2 id="firstrow-userstats">{{ early_bird_user }}</h2>
+                <p id="para-firstrow">typed <strong>{{ early_bird_percentage }} % </strong>of messages in Morning. </p>
+                <p id="para-firstrow">~ between <strong>5am</strong> to <strong>10am</strong></p>
+            </div>
+        
+            <!-- Night Owl -->
+            <div class="user-stats">
+                <p id="heading-user">🌙Night Owl🌙</p>
+                <h2 id="firstrow-userstats">{{ night_owl_user }}</h2>
+                <p id="para-firstrow">typed <strong>{{ night_owl_percentage }} % </strong>of messages at Midnight. </p>
+                <p id="para-firstrow">~ between<strong>12am</strong> to <strong>4am</strong></p>
+            </div>
+        </div>
+        <div class="html2pdf__page-break"></div>
+        <br>
+        <h2 id="topic">Wordcloud</h2>
+<div class="wordcloud-container">
+    <img id="wordCloudImage" src="{{ wordcloud_image }}" alt="Word Cloud" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+    <!-- Share on WhatsApp button -->
+    <!-- <button id="shareButton">
+        <img src="/public/images/whatsapp.svg" width="32" height="32" alt="Share on WhatsApp">
+    </button> -->
+</div>
+<div class="html2pdf__page-break"></div>
+<!-- Display emoji pie chart below word cloud -->
+<br>
+<h2 id="topic">Emojis</h2>
+<!-- Display emoji pie chart below word cloud -->
+<div class="emoji-chart-container">
+    <!-- First column: most used emoji -->
+    <div class="emoji-column">
+        
+        <p class="emoji">{{ most_used_emoji }}</p>
+        <p>Most common emoji used <br> with <strong>{{ most_used_emoji_count }}</strong> appearances</p>
+    </div>
+
+    <!-- Second column: total emojis used -->
+    <div class="emoji-column">
+        <p class="count">{{ total_emojis_used }}</p>
+        <p>Different types of Emojis Used</p>
+    </div>
+
+    <!-- Third column: pie chart -->
+    <div class="chart-column">
+        <!-- <h3>Emoji Pie Chart</h3> -->
+        <img src="{{ emoji_chart_image_path }}" alt="Emoji Chart" class="chart-image" class="chart" style="max-width: 100%; height: auto; display: block; margin: 0 auto;" >
+    </div>
+</div>
+<div class="html2pdf__page-break"></div>
+<br>
+<h2 id="topic">Busiest Day</h2>
+
+        <!-- Display busiest day bar graph -->
+        <div class="bar-graph-container">
+            <h2>Most Busy Day</h2>
+            <img src="{{ busiest_day_bar_graph_path }}" alt="Busiest Day Bar Graph" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+        </div>
+        <div class="html2pdf__page-break"></div>
+        <!-- Display busiest month bar graph -->
+        <div class="bar-graph-container">
+            <h2>Most Busy Month</h2>
+            <img src="{{ busiest_month_bar_graph_path }}" alt="Busiest Month Bar Graph" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+        </div>
+        <div class="html2pdf__page-break"></div>
+        <br>
+        <h2 id="topic">Activity Chart</h2>
+        <!-- Display activity heatmap -->
+        <div class="activity-heatmap-container">
+            <h2>Message Activity Heatmap</h2>
+            <img src="{{ activity_heatmap_image }}" alt="Activity Heatmap" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+        </div>
+        <!-- Display user activity bar graph -->
+        <div class="html2pdf__page-break"></div>
+<div class="user-activity-bar-graph-container">
+    <h2>User Activity Bar Graph</h2>
+    <img src="{{ user_activity_bar_graph_path }}" alt="User Activity Bar Graph">
+</div>
+<div class="html2pdf__page-break"></div>
+<br>
+<h2 id="topic">Most Common Words</h2>
+<!-- Display common words bar graph -->
+<div class="common-words-bar-graph-container">
+    <!-- <h2>Common Words Bar Graph</h2> -->
+    <img src="{{ common_words_bar_graph_path }}" alt="Common Words Bar Graph">
+</div>
+    </div>
+    <button id="download-button" onclick="downloadContent()">Download Pdf</button>
+    <footer>
+        <h3>Made by our Group Members as a Major Project. </h3>
+        <br>
+        <div class="container-footer">
+            <h3>
+                <img src="https://whatsanalyze.com/favicon.ico" height="32px" alt="whatsanalyze logo" style="vertical-align:sub">
+                Pragmatic - The WhatsApp Chat Analyzer
+            </h3>
+            <h3 class="mt-5" style="height:70px">
+                Mahatma Gandhi Mission's College of Engineering and Technology<BR>
+                IT ENGINNERING.<br>
+                GROUP NO. 7
+            </h3>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+
+<script>
+    function downloadContent() {
+        // Select the container to be downloaded
+        var container = document.querySelector('.container');
+
+        // Convert container to PDF
+        html2pdf()
+            .from(container)
+            .set({
+                margin: 0,
+                filename: '{{ uploaded_filename }} chat_analysis.pdf',
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+            })
+            
+            .save();
+    }
+
+
+</script>
+</body>
+</html>

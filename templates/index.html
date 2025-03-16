@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en" class="home">
+<head>
+
+    <title>Pragmatic - The WhatsApp Chat Analyzer</title>
+    <meta name="description" content="Get statistics, analytics, and fun facts about your WhatsApp groups. Who is the most chatty user? What's the most common emoji in your group? Which are the busiest hours during the day? And more...">
+    <meta name="og:description" content="Get statistics, analytics, and fun facts about your WhatsApp groups. Who is the most chatty user? What's the most common emoji in your group? Which are the busiest hours during the day? And more...">
+    <meta property="og:image" content="https://chatilyzer.com/public/images/preview.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, maximum-scale=1.0" />
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+    <link rel="icon" href="https://whatsanalyze.com/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="/static/css/index.css">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109833835-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-109833835-1');
+    </script>
+
+</head>
+
+<body class="home">
+
+<header id="header">
+    <hgroup>
+        <h1>
+            <a title="Chatilyzer" href="/"></a>
+            <span class="whatsapp"></span>
+            Pragmatic 
+            <span class="slogan">~Analyze your WhatsApp Chat in Seconds</span>
+        </h1>
+    </hgroup>
+
+    <nav class="clearfix">
+        <a href="#fileLabel">Start Now</a>
+        <a href="#howto">How To</a>
+        <a href="#faq">FAQ</a>
+    </nav>
+</header>
+
+<form action="/" method="post" enctype="multipart/form-data" id="uploadForm">
+    <input type="file" id="fileInput" name="file" accept=".txt" style="display: none;">
+    <label for="fileInput" id="fileLabel">Choose File</label>
+    <!-- <span id="fileName"></span> -->
+    <button type="submit" id="uploadButton" style="display: none;">Upload Chat File</button>
+</form>
+<br>
+<br>
+<section id="howto">
+    <div class="wrapper">
+        <h2>How to use Pragmatic?</h2>
+        <p>In order to use our analyzer you need to <strong>export your WhatsApp chat to a text file</strong>. <br />Here's a step by step tutorial of how to export your chat:</p>
+        <div id="platforms">
+            <button class="button active" onclick="showAndroid()">Android</button>
+            <button class="button" onclick="showIOS()">iOS</button>
+        </div>
+        <ol id="platform_android" class="platform active">
+            <li>
+                Go to WhatsApp in your mobile phone and select the desired group.
+            </li>
+            <li>
+                Press the context menu ( <img src="/static/android2.png" style="width: 20px; margin: 0 3px;" /> ) in the top right corner..
+            </li>
+            <li>
+                In the context menu, select the "<strong>More</strong>" item. 
+                <img src="/static/android3.png" style="max-height: 300px; display: block; margin-top: 10px;" />
+            </li>
+            <li>
+                In the new menu, choose "<strong>Email Chat</strong>". 
+                <img src="/static/android4.png" style="max-height: 160px; display: block; margin-top: 10px;" />
+            </li>
+            <li>
+                You should get a popup where you need to choose between exporting with or without media. <br /> Choose the "<strong>Without Media</strong>" option. 
+                <img src="/static/android5.png" style="max-height: 130px; display: block; margin-top: 10px; max-width: 100%" />
+            </li>
+            <li>
+                Email the exported text file to yourself.
+                <img src="/static/android6.png" style="max-height: 210px; display: block; margin-top: 10px;" />
+            </li>
+            <li>
+                Download the file to your computer, and <a href="#fileLabel">upload it to Chatilyzer</a>.
+            </li>
+        </ol>
+        <ol id="platform_ios" class="platform">
+            <li>
+                Go to WhatsApp in your mobile phone and select the desired group.
+            </li>
+            <li>
+                Press the group name in the top navigation bar.
+            </li>
+            <li>
+                Scroll down and look for the "<strong>Email Conversation</strong>" button.
+            </li>
+            <li>
+                You should get a popup where you need to choose between exporting with or without media. <br /> Choose the "<strong>Without Media</strong>" option.  
+            </li>
+            <li>
+                Email the exported text file to yourself.
+                <img src="/static/ios5.png" style="max-height: 210px; display: block; margin-top: 10px;" />
+            </li>
+            <li>
+                Download the file to your computer, and <a href="#fileLabel">upload it to Chatilyzer</a>.
+            </li>
+        </ol>
+    </div>
+</section>
+
+<div class="faq-section" id="faq">
+    <h2>FAQs about WhatsApp chats</h2>
+    <div class="faq-list">
+        <div class="faq-item">
+            <button class="accordion">How to export your WhatsApp chat</button>
+            <div class="panel">
+                <p>Everyone can easily export his WhatsApp chat or group chat. Open WhatsApp on the device you are currently logged in with > Tap on the chat > Go to the chats settings > Scroll down and tap on Export chat > Choose to export with or without media.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="accordion">How to export your WhatsApp group chat</button>
+            <div class="panel">
+                <p>Exporting your WhatsApp group chat works like a normal chat. Open up Whatsapp with the device that you are logged in with. Go to the chat and tap on "More" and then Export chat. You can now choose to export the chat with or without Media.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="accordion">How to Archive all Whatsapp chats on iOS</button>
+            <div class="panel">
+                <p>On IOS, you can Archive your WhatsApp chats by opening WhatsApp then tap on "Settings" in the Navigation bar. Tap on chats and then Archive All Chats.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="accordion">How to Archive all Whatsapp chats on Android</button>
+            <div class="panel">
+                <p>On Android open WhatsApp then tap on the three-dot icon at the top right corner. Tap on "Settings" and then "Chats". On the new View tap "Chat history" and "Archive all chats".</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="accordion">How to Backup Whatsapp chat on iOS including iOS 14</button>
+            <div class="panel">
+                <p>By backing up your WhatsApp chat on your iPhone you can load your account to a new device easily. Open WhatsApp, tap on "Settings" at the bottom-right in corner. Then tap on "Chats" and "Chat Backup" next press "Back Up Now"</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="accordion">How to Back up Whatsapp chat on Android</button>
+            <div class="panel">
+                <p>To Back up Whatsapp chat on your Android device, tap on the three-dots at the top-right of your screen. Tap on "Settings and then on "Chats". Next press on "Chat backup" and on the next screen "Back Up" Button</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="accordion">How to transfer Whatsapp Group Chats to Signal
+            </button>
+            <div class="panel">
+                <p>Create a group in Signal with your whatsApp contacts, now click on the group or on the three-dots at the top right. In the Settings view tap on group link copy the link. Finally go to whatsApp and paste the link in the chat box of the group you want to migrate.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="accordion">How to transfer Whatsapp to Telegram
+            </button>
+            <div class="panel">
+                <p>Open the chat you want to transfer in WhatsApp and tap on the three-dots at the top right in corner. Select Export Chat and in the Share menu select Telegram. You can choose to export with or without media. You can repeat this step for all chats you would like to transfer.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="accordion">How to transfer Whatsapp from Android to Iphone
+            </button>
+            <div class="panel">
+                <p>There is currently no easy way to transfer your chats between the operating systems, the easiest is to archive your chats you would like to keep as PDF and start new.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    <h3>Made by our Group Members as a Major Project. </h3>
+    <br>
+    <div class="container">
+        <h3>
+            <img src="https://whatsanalyze.com/favicon.ico" height="32px" alt="whatsanalyze logo" style="vertical-align:sub">
+            Pragmatic - The WhatsApp Chat Analyzer
+        </h3>
+        <h3 class="mt-5" style="height:70px">
+            Mahatma Gandhi Mission's College of Engineering and Technology<BR>
+            IT ENGINNERING.<br>
+            GROUP NO. 7
+        </h3>
+    </div>
+</footer>
+<script>
+    function showAndroid() {
+        document.getElementById('platform_android').classList.add('active');
+        document.getElementById('platform_ios').classList.remove('active');
+        document.querySelector('#platforms .button.active').classList.remove('active');
+        document.querySelector('#platforms .button:nth-child(1)').classList.add('active');
+    }
+
+    function showIOS() {
+        document.getElementById('platform_android').classList.remove('active');
+        document.getElementById('platform_ios').classList.add('active');
+        document.querySelector('#platforms .button.active').classList.remove('active');
+        document.querySelector('#platforms .button:nth-child(2)').classList.add('active');
+    }
+// Get all accordion buttons
+var acc = document.querySelectorAll('.accordion');
+
+// Loop through each accordion button
+acc.forEach(function(button) {
+    // Add click event listener
+    button.addEventListener('click', function(event) {
+        event.stopPropagation(); // Stop propagation to prevent closing the panel immediately
+
+        // Check if the panel is already open
+        var panel = this.nextElementSibling;
+        var isOpen = panel.classList.contains('show');
+
+        // Close all panels
+        closeAllPanels();
+
+        // If panel was not already open, open it
+        if (!isOpen) {
+            panel.classList.toggle('show');
+            panel.style.marginBottom = '10px';
+
+            // Add margin to the selected accordion
+            var prevAcc = this.previousElementSibling;
+            if (prevAcc && prevAcc.classList.contains('accordion')) {
+                prevAcc.style.marginBottom = '10px';
+            }
+            this.style.marginTop = '10px';
+        }
+    });
+});
+
+// Add click event listener to the document body
+document.body.addEventListener('click', function() {
+    // Close all panels when clicking anywhere other than the panel
+    closeAllPanels();
+});
+
+// Function to close all panels
+function closeAllPanels() {
+    var panels = document.querySelectorAll('.panel');
+    panels.forEach(function(panel) {
+        panel.classList.remove('show');
+        panel.style.marginBottom = '0';
+    });
+
+    // Reset margin of all accordions
+    acc.forEach(function(button) {
+        button.style.marginTop = '0';
+        button.style.marginBottom = '0';
+    });
+}
+    
+           // Function to update file name label
+    document.getElementById('fileInput').addEventListener('change', function() {
+        var file = this.files[0];
+        var fileName = file.name;
+        var fileExtension = fileName.split('.').pop().toLowerCase();
+        
+        // Check if the file extension is not 'txt'
+        if (fileExtension !== 'txt') {
+            alert("File must be in TXT format.");
+            // Clear the file input field
+            this.value = "";
+            return;
+        }
+        
+        // Update the file name label
+        fileName = fileName.replace(/\.[^/.]+$/, ""); 
+        document.getElementById('fileLabel').innerHTML = fileName;
+        document.getElementById('uploadButton').style.display = 'inline-block';
+        
+        // Show alert when file is chosen
+        alert("File uploaded: " + fileName);
+    });
+    
+</script>
+</body>
+</html>

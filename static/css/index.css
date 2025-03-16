@@ -1,0 +1,330 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700,700i,900,900i');
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    background: #a3639f;
+    background: -moz-linear-gradient(-45deg,  #a3639f 0%, #6c90af 49%, #86c3a7 100%);
+    background: -webkit-linear-gradient(-45deg,  #a3639f 0%,#6c90af 49%,#86c3a7 100%);
+    background: linear-gradient(135deg,  #a3639f 0%,#6c90af 49%,#86c3a7 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a3639f', endColorstr='#86c3a7',GradientType=1 );
+    min-height: 100%;
+}
+
+.rtl {
+    direction: rtl;
+}
+
+button {
+    outline: 0;
+}
+
+.button {
+    background: none;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 20px;
+    color: #fff;
+    background: #ce2533;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    text-decoration: none;
+}
+
+.button:hover {
+    background: #d4313f;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    color: #656565;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+body > * {
+    z-index: 0;
+}
+
+#header {
+    background: #fff;
+    position: relative;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 80px;
+    flex-wrap: wrap;
+}
+
+#header .whatsapp {
+    position: absolute;
+    left: 36px;
+    top: -4px;
+    display: inline-block;
+    width: 53px;
+    height: 67px;
+    background: url(https://whatsanalyze.com/favicon.ico) no-repeat center center;
+    background-size: contain;
+}
+
+#header h1 {
+    font-size: 50px;
+    margin: 0;
+    letter-spacing: 0.025em;
+    text-transform: uppercase;
+    display: inline-block;
+    position: relative;
+    padding-left: 100px;
+    position: relative;
+    color: #111;
+}
+
+#header h1 .slogan {
+    font-size: 22px;
+    font-weight: 300;
+    color: #656565;
+    display: block;
+    text-transform: none;
+    margin-left: -53px;
+    margin-top: 3px;
+}
+
+#header h1 a {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    z-index: 10;
+}
+
+nav a {
+    font-size:20px;
+    display: inline-block;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #656565;
+    padding: 10px 20px;
+}
+
+nav a:hover {
+    transform: scale(1.2);
+    color:green;
+    font-weight: bold;
+}
+
+/* Center the form container */
+form {
+    text-align: center;
+}
+
+/* Center the file input label */
+#fileLabel {
+    display: block;
+    width: 360px; /* Adjust the width as needed */
+    margin: 0 auto; /* Center horizontally */
+    background-color: #4CAF50; /* Green background color */
+    color: white; /* White text color */
+    padding: 10px 20px; /* Padding */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Cursor on hover */
+    margin-top: 10px; /* Margin top */
+}
+
+/* Style for file input */
+#fileInput {
+    display: none; /* Hide the default file input */
+}
+
+/* Style for submit button */
+#uploadButton {
+    display: none; /* Hide the upload button by default */
+    background-color: #008CBA; /* Blue background color */
+    color: white; /* White text color */
+    padding: 10px 20px; /* Padding */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Cursor on hover */
+    margin-top: 10px; /* Margin top */
+    width: 150px; /* Fixed width */
+    margin-left: auto; /* Center horizontally */
+    margin-right: auto; /* Center horizontally */
+}
+
+/* Style for submit button hover state */
+#uploadButton:hover {
+    background-color: #005f79; /* Darker blue background color */
+}
+section h2 {
+    color: #111;
+    font-weight: 300;
+    text-align: center;
+    margin: 0 0 40px;
+    font-size: 24px;
+}
+
+section .wrapper {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+button{
+    background: none;
+border: none;
+border-radius: 5px;
+padding: 5px 20px;
+color: #fff;
+background: #ce2533;
+font-family: 'Roboto', sans-serif;
+font-size: 14px;
+cursor: pointer;
+transition: background 0.2s ease;
+text-decoration: none;
+}
+#howto {
+    background: #fff;
+    padding: 40px 0;
+    margin: 0px 176px;
+}
+
+#howto p {
+    color: #656565;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+#howto strong {
+    font-weight: 700;
+}
+
+#howto ol {
+    margin: 0;
+    padding: 0 17px;
+}
+
+#howto li {
+    margin: 0 0 20px;
+    font-size: 16px;
+    line-height: 22px;
+}
+
+#howto li img {
+    display: inline-block;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+#howto li a {
+    color: #656565;
+}
+
+#howto #platforms {
+    text-align: center;
+    margin: 20px auto;
+}
+
+#howto #platforms > * { 
+    border: 1px solid #ce2533;
+}
+
+#howto #platforms > *:not(.active) {
+    background: #fff;
+    color: #ce2533;
+}
+
+#howto .platform:not(.active) {
+    display: none;
+}
+
+.faq-section h2{
+    color:black;
+    text-align: center; 
+    font-size: 59px;
+    margin-bottom: 26px;
+
+}
+
+.faq-section {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    border-bottom: 1px solid #ccc;
+    transition: height 0.4s; /* Add transition effect */
+}
+
+.accordion {
+    background-color: #f9f9f9;
+    color: #333;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: background-color 0.4s;
+}
+
+.accordion:hover {
+    background-color: #ddd;
+}
+
+.panel {
+    padding: 8px 18px;
+    display: none;
+    background-color: white;
+    overflow: hidden;
+}
+
+.panel p {
+    margin: 0;
+}
+
+.panel.show {
+    display:block;
+}
+
+footer {
+    margin-top:56px;
+    background-color: #333;
+    color: #fff;
+    padding: 22px;
+    padding-bottom:5px;
+    text-align: center;
+}
+
+footer h3{
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer img {
+    vertical-align: sub;
+}
+
+.container {
+    margin-top: 20px;
+}
